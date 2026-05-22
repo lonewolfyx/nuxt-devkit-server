@@ -1,7 +1,7 @@
 {
     "extends": "@lonewolfyx/tsconfig/tsconfig.lib.json",
     "compilerOptions": {
-        "baseUrl": "./",
+        "baseUrl": ".",
         "paths": {
             "@/*": [
                 "./src/*"
@@ -18,5 +18,9 @@
         "noUnusedLocals": false,
         "noUnusedParameters": false,
         "declarationMap": false
-    }
+    },
+    "exclude": [
+        "test",
+        "dist"
+    ]
 }
