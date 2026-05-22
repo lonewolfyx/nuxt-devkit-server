@@ -11,7 +11,9 @@
         "url": "https://github.com/lonewolfyx/nuxt-devkit-server/issues"
     },
     "keywords": [
-        "nuxt"
+        "nuxt",
+        "dev",
+        "server"
     ],
     "exports": {
         ".": {
