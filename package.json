@@ -1,0 +1,46 @@
+{
+    "name": "nuxt-devkit-server",
+    "type": "module",
+    "version": "0.0.0",
+    "packageManager": "pnpm@10.33.2",
+    "description": "Create a local server for running Nuxt outputs in CLI tools.",
+    "author": "lonewolfyx",
+    "license": "MIT",
+    "homepage": "https://github.com/lonewolfyx/nuxt-devkit-server",
+    "bugs": {
+        "url": "https://github.com/lonewolfyx/nuxt-devkit-server/issues"
+    },
+    "keywords": [
+        "nuxt"
+    ],
+    "scripts": {
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix",
+        "prepare": "simple-git-hooks",
+        "prepublishOnly": "pnpm build"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org",
+        "access": "public"
+    },
+    "devDependencies": {
+        "@antfu/eslint-config": "^9.0.0",
+        "@lonewolfyx/tsconfig": "^0.0.6",
+        "@types/node": "^25.9.1",
+        "eslint": "^10.4.0",
+        "jiti": "^2.7.0",
+        "nano-staged": "^1.0.2",
+        "picocolors": "^1.1.1",
+        "simple-git-hooks": "^2.13.1",
+        "tsdown": "^0.22.0",
+        "tsx": "^4.22.3",
+        "typescript": "^6.0.3"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "npx nano-staged",
+        "commit-msg": "node scripts/verify-commit.js"
+    },
+    "nano-staged": {
+        "*": "eslint --fix"
+    }
+}
