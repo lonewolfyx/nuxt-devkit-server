@@ -10,6 +10,7 @@ import { existsSync, statSync } from 'node:fs'
 import { createServer } from 'node:http'
 import { isAbsolute, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
+import { getPort } from 'get-port-please'
 
 function toAbsolutePath(path: string): string {
     return isAbsolute(path) ? path : resolve(process.cwd(), path)
@@ -104,7 +105,7 @@ async function setupWebSocket(
 export async function createRuntimeServer(
     options: CreateRuntimeServerOptions,
 ): Promise<RuntimeServer> {
-    const port = options.port ?? 7777
+    const port = options.port ?? await getPort({ portRange: [7777, 9000] })
     const host = options.host ?? '127.0.0.1'
 
     const nitro = await loadNitroEntrypoint(options.path)
