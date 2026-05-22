@@ -17,9 +17,9 @@ export interface NitroModule {
 
 export interface CreateRuntimeServerOptions {
     /**
-     * Nitro / Nuxt 构建产物目录，或者直接传 server/index.mjs 文件路径。
+     * Nitro / Nuxt build output directory, or the direct path to server/index.mjs.
      *
-     * 支持：
+     * Supported:
      * - dist
      * - .output
      * - dist/server/index.mjs
@@ -28,12 +28,12 @@ export interface CreateRuntimeServerOptions {
     path: string
 
     /**
-     * 服务端口，默认 7777
+     * Server port, defaults to 7777
      */
     port?: number
 
     /**
-     * 服务监听地址，默认 127.0.0.1
+     * Server listen address, defaults to 127.0.0.1
      */
     host?: string
 }
