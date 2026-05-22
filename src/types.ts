@@ -1,4 +1,5 @@
 import type { IncomingMessage, Server, ServerResponse } from 'node:http'
+import type { AddressInfo } from 'node:net'
 
 export type MaybePromise<T> = T | Promise<T>
 
@@ -36,6 +37,11 @@ export interface CreateRuntimeServerOptions {
      * Server listen address, defaults to 127.0.0.1
      */
     host?: string
+
+    /**
+     * Callback fired once the server is listening.
+     */
+    onReady?: (info: { info: AddressInfo, app: RuntimeServer, port: number }) => void
 }
 
 export interface RuntimeServer {

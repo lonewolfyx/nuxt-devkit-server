@@ -131,9 +131,19 @@ export async function createRuntimeServer(
     await setupWebSocket(server, nitro.websocket)
     const actualPort = await listen(server, host, port)
 
-    return {
+    const app: RuntimeServer = {
         server,
         url: `http://${host}:${actualPort}`,
         close: () => closeServer(server),
     }
+
+    if (options.onReady) {
+        options.onReady({
+            info: server.address() as AddressInfo,
+            app,
+            port: actualPort,
+        })
+    }
+
+    return app
 }
