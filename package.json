@@ -1,7 +1,7 @@
 {
     "name": "nuxt-devkit-server",
     "type": "module",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "packageManager": "pnpm@10.33.2",
     "description": "Create a local server for running Nuxt outputs in CLI tools.",
     "author": "lonewolfyx",
